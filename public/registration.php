@@ -10,7 +10,8 @@ echo $HTML5;
     include("./templates/navbar.php") 
     ?>
 
-<form>
+<div class="container">
+<form action="./controllers/loginController.php">
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -26,6 +27,7 @@ echo $HTML5;
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+</div>
 
 </body>
 </html>

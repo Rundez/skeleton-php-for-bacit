@@ -2,7 +2,6 @@
 $_SESSION['name'] = 'Martin';
 include "./config/conf.php";
 echo $HTML5;
-$conn = mysqli_connect($servername, $username, $password);
 ?>
 
 
@@ -16,14 +15,6 @@ $conn = mysqli_connect($servername, $username, $password);
     <?php
     $user =  $_POST['email'];
     $pw = $_POST['pw'];
-
- 
-
-    // Check connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-    echo "Connected successfully";
     ?>
 
 

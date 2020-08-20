@@ -1,7 +1,8 @@
 <?php 
 $servername = "db";
-$username = "dbuser";
-$password = "BACIT2020";
+$dbUsername = "root";
+$dbPassword = "BSBACIT2020";
+$dbName = "php";
 
 $HTML5 = 
 '<!doctype html>
