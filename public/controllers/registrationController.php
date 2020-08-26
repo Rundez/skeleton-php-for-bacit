@@ -11,4 +11,6 @@ $pass = $_POST['pw'];
 
 
 addUser($fName, $lName, $email, $pass);
-header("Location: ../Hello.php");
+session_start();
+$_SESSION['name'] = $fName;
+header("Location: ../index.php");

@@ -1,5 +1,5 @@
 <?php session_start();
-$_SESSION['name'] = 'Martin';
+$_SESSION['name'] = 'Mari';
 include "./config/conf.php";
 echo $HTML5;
 ?>
@@ -11,7 +11,7 @@ echo $HTML5;
     ?>
 
 <div class="container">
-<form action="./controllers/loginController.php" method="POST">
+<form action="./controllers/registrationController.php" method="POST">
 <div class="form-group">
     <label for="firstName">First name</label>
     <input type="text" class="form-control" name="fName" id="firstName">
