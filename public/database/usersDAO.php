@@ -2,6 +2,10 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+if($_GET['users'] ){
+getUsers();
+}
+
 function addUser($firstname, $lastname, $username, $userPassword)
 {
   include "../config/conf.php";
@@ -21,7 +25,20 @@ function addUser($firstname, $lastname, $username, $userPassword)
   $conn->close();
 }
 
-function getUsers($id)
+function getUsers()
 {
+  include "../config/conf.php";
+
+  $dsn = "mysql:host=$servername;dbname=$dbName";
+
+  $pdo = new PDO($dsn, $dbUsername, $dbPassword);
+  $stmt = $pdo->query("select * from users");
+
+
+  $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $data = json_encode($row);
+    return $data;
+
+    //echo("<script>console.log($data);</script>");
 
 }
