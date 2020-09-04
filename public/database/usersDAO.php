@@ -2,9 +2,11 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-if($_GET['users'] ){
-getUsers();
-}
+//API call
+//if ($_GET['users']) {
+//  getUsers();
+//}
+//userLogin("m.ruud93@gmail.com", 12346);
 
 function addUser($firstname, $lastname, $username, $userPassword)
 {
@@ -35,10 +37,19 @@ function getUsers()
   $stmt = $pdo->query("select * from users");
 
 
-  $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $data = json_encode($row);
-    return $data;
+  $row = $stmt->fetchAll();
+  $data = json_encode($row);
+  echo $data;
+}
 
-    //echo("<script>console.log($data);</script>");
+function userLogin($email, $password){
+  include "../config/conf.php";
 
+  $dsn = "mysql:host=$servername;dbname=$dbName";
+  $pdo = new PDO($dsn, $dbUsername, $dbPassword);
+  $stmt = $pdo->query("select * from users where email='$email' AND password='$password'");
+
+  $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+ 
+  return (count($result) == 1 ? true : false);
 }
