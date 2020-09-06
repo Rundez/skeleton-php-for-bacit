@@ -51,5 +51,6 @@ function userLogin($email, $password){
 
   $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
  
+  // Returns true if a row with the email and password matches
   return (count($result) == 1 ? true : false);
 }

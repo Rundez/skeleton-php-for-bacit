@@ -9,8 +9,9 @@ if($method == "login") {
     include "../database/usersDAO.php";
     
     if(userLogin($email, $password)){ 
+        $_SESSION['name'] = $email;;
         header("Location: ../index.php");
-    } else {
+    } else { 
         header("Location: ../login.php");
     }
 }

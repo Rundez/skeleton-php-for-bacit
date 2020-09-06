@@ -8,8 +8,6 @@ $lName = $_POST['lName'];
 $email = $_POST['email'];
 $pass = $_POST['pw'];
 
-
-
 addUser($fName, $lName, $email, $pass);
 session_start();
 $_SESSION['name'] = $fName;

@@ -1,5 +1,4 @@
 <?php session_start();
-$_SESSION['name'] = 'Martin';
 include "./config/conf.php";
 echo $HTML5;
 ?>
